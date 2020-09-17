@@ -11,6 +11,13 @@ These won't always produce output when you run them, and are occasionally meant 
 In later chapters, some modules act as an entrypoint to run a program from the command line, importing other modules along the way.
 Follow along in the book for more context!
 
+## Notes
+### Ch 2. Separation of concerns
+- Separation of concerns is a major key to understandable code; many design concepts arise directly from this principle
+- Functions extract named concepts from procedural code. Clarity and separation are the primary objectives of extraction; reuse is a secondary benefit.
+- Classes group closely related behaviors and data together into an object
+- Modules group related classes, functions, and data while keeping independent concerns separate. Explicitly importing code from other modules makes it clear what's being used where.
+- Packages help create a hierarchy of modules that helps with naming and code discovery.
 
 ## Errata and questions
 
