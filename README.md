@@ -19,6 +19,16 @@ Follow along in the book for more context!
 - Modules group related classes, functions, and data while keeping independent concerns separate. Explicitly importing code from other modules makes it clear what's being used where.
 - Packages help create a hierarchy of modules that helps with naming and code discovery.
 
+### Ch 3. Abstraction and encapsulation
+- Abstraction is a tool for deferring obligatory comprehension of code.
+- Abstraction takes many forms: decomposition, encapsulation, programming style, and inheritance versus composition.
+    - Decomposition is the separation of something into its constituent components
+    - Encapsulation groups related functions and data into a larger construct.
+    - Programming styles: prodcedural, functional, declarative
+
+- Each approach to abstraction is useful, but context and extent of use are important considerations.
+- Refactoring is an iterative process; abstraction that once worked may need to be revisited later.
+
 ## Errata and questions
 
 If you find an error in the code or the book, or if you have a question about the content, please read the [contribution guidelines](.github/CONTRIBUTING.md) to understand the best course of action.
