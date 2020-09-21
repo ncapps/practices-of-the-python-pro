@@ -25,9 +25,19 @@ Follow along in the book for more context!
     - Decomposition is the separation of something into its constituent components
     - Encapsulation groups related functions and data into a larger construct.
     - Programming styles: prodcedural, functional, declarative
-
+    - Composition frees you from the limitations of a hierarchy while still providing the concept of relatedness between two things
 - Each approach to abstraction is useful, but context and extent of use are important considerations.
 - Refactoring is an iterative process; abstraction that once worked may need to be revisited later.
+
+### Ch 4. Designing for high performance
+- Design for performance both up front and iteratively throughout your development.
+- *Time complexity* is a measure of how quickly your code can perform a task in relation to its inputs
+- *Space complexity* is a measure of how your code uses disk space or memory as its inputs grow.
+- The ideal complexity is constant time (O(1)), which doesn’t depend on the size of the inputs
+- It’s useful to examine the worst case to get a better sense for what the code is capable of. Big O notation always measures the worst-case complexity of code for this reason.
+- Think carefully about the right data type for the task.
+- Prefer generators over lists when you don’t need all the values at once, to save on memory usage.
+- Use the timeit and cProfile/profile Python modules to test your hypotheses about complexity and performance.
 
 ## Errata and questions
 
