@@ -39,6 +39,13 @@ Follow along in the book for more context!
 - Prefer generators over lists when you don’t need all the values at once, to save on memory usage.
 - Use the timeit and cProfile/profile Python modules to test your hypotheses about complexity and performance.
 
+### Ch 5. Testing your software
+- Functional tests make sure code produces the expected output from a given input.
+- Testing saves you time in the long run by catching bugs and making refactoring code easier.
+- Manual testing isn’t scalable and should be used to supplement automated testing.
+- Unittest and pytest are two popular unit and integration testing frameworks for Python.
+- Test-driven development puts the tests first, guiding you to a working implementation based on the requirements.
+
 ## Errata and questions
 
 If you find an error in the code or the book, or if you have a question about the content, please read the [contribution guidelines](.github/CONTRIBUTING.md) to understand the best course of action.
