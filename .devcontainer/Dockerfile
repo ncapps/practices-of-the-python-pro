@@ -61,6 +61,7 @@ RUN apt-get update \
     && ([ "${COMMON_SCRIPT_SHA}" = "dev-mode" ] || (echo "${COMMON_SCRIPT_SHA} */tmp/common-setup.sh" | sha256sum -c -)) \
     && /bin/bash /tmp/common-setup.sh "${INSTALL_ZSH}" "${USERNAME}" "${USER_UID}" "${USER_GID}" "${UPGRADE_PACKAGES}" \
     && rm /tmp/common-setup.sh \
+    && apt-get -y install sqlite3 libsqlite3-dev \
     #
     # Setup default python tools in a venv via pipx to avoid conflicts
     && mkdir -p ${PIPX_BIN_DIR} \
