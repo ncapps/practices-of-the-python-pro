@@ -71,7 +71,7 @@ def main():
         'B': Option('List bookmarks by date',
                     commands.ListBookmarksCommand()),
         'T': Option('List bookmarks by title',
-                    commands.ListBookmarksCommand()),
+                    commands.ListBookmarksCommand(order_by='title')),
         'D': Option('Delete a bookmark',
                     commands.DeleteBookmarkCommand(),
                     get_bookmark_id_for_deletion),
