@@ -24,7 +24,7 @@ Follow along in the book for more context!
 - Abstraction takes many forms: decomposition, encapsulation, programming style, and inheritance versus composition.
     - Decomposition is the separation of something into its constituent components
     - Encapsulation groups related functions and data into a larger construct.
-    - Programming styles: prodcedural, functional, declarative
+    - Programming styles: procedural, functional, declarative
     - Composition frees you from the limitations of a hierarchy while still providing the concept of relatedness between two things
 - Each approach to abstraction is useful, but context and extent of use are important considerations.
 - Refactoring is an iterative process; abstraction that once worked may need to be revisited later.
@@ -45,6 +45,13 @@ Follow along in the book for more context!
 - Manual testing isn’t scalable and should be used to supplement automated testing.
 - Unittest and pytest are two popular unit and integration testing frameworks for Python.
 - Test-driven development puts the tests first, guiding you to a working implementation based on the requirements.
+
+### Ch 6. Separation of concerns in practice
+- Separation of concerns is a tool for achieving more readable, maintainable code.
+- End-user applications are often separated into persistence, business logic, and presentation layers.
+- Separation of concerns works closely with encapsulation, abstraction, and loose coupling.
+- Applying effective separation of concerns allows you to add, change, and delete functionality without affecting the surrounding code.
+
 
 ## Errata and questions
 

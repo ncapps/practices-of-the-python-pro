@@ -4,7 +4,7 @@ from database import DatabaseManager
 
 db = DatabaseManager('bookmarks.db')
 
-
+# Command Pattern - All classes use common methods: execute()
 class CreateBookmarksTableCommand:
     def execute(self):
         db.create_table('bookmarks', {
@@ -18,7 +18,7 @@ class CreateBookmarksTableCommand:
 
 class AddBookmarkCommand:
     def execute(self, data):
-        data['data_added'] = datetime.utcnow().isoformat()
+        data['date_added'] = datetime.utcnow().isoformat()
         db.add('bookmarks', data)
         return 'Bookmark added!'
 
@@ -28,7 +28,7 @@ class ListBookmarksCommand:
         self.order_by = order_by
 
     def execute(self):
-        db.select('bookmarks', order_by=self.order_by).fetchall()
+        return db.select('bookmarks', order_by=self.order_by).fetchall()
 
 
 class DeleteBookmarkCommand:

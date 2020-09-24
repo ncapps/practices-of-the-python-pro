@@ -15,12 +15,12 @@ class DatabaseManager:
             return cursor
 
     def create_table(self, table_name, columns):
-        columns_with_types = [f'{column_name}' f'{data_type}'
+        columns_with_types = [f'{column_name} {data_type}'
                               for column_name, data_type in columns.items()]
         self._execute(
             f'''
             CREATE TABLE IF NOT EXISTS {table_name}
-            ({", ".join(columns_with_types)});'
+            ({", ".join(columns_with_types)});
             '''
         )
 
@@ -43,13 +43,14 @@ class DatabaseManager:
         delete_criteria = ' AND '.join(placeholders)
         self._execute(
             f'''
-            DELETE {table_name}
+            DELETE FROM {table_name}
             WHERE {delete_criteria};
             ''',
             tuple(criteria.values())
         )
 
     def select(self, table_name, criteria=None, order_by=None):
+        criteria = criteria or {}
         placeholders = [f'{column_name} = ?'
                         for column_name in criteria.keys()]
         select_criteria = ' AND '.join(placeholders)
