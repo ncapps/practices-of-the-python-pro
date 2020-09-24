@@ -13,6 +13,11 @@ Follow along in the book for more context!
 
 ## Notes
 ### Ch 2. Separation of concerns
+- When a class depends on another class, those classes are said to be coupled. If a class depends on many details of another class, such that changing one requires changing the other, those classes are tightly coupled.
+- We want our classes to have high cohesion because if everything in a class is closely related, our concerns are likely to be well separated. When a class’s methods and attributes are closely related, it is said to have high cohesion.
+- The process of breaking a problem into small, manageable pieces is called decomposition.
+- If a function becomes too long or does too many things, it can be difficult to characterize and therefore difficult to name.
+- Clear code requires you to keep less knowledge in your head at any given time
 - Separation of concerns is a major key to understandable code; many design concepts arise directly from this principle
 - Functions extract named concepts from procedural code. Clarity and separation are the primary objectives of extraction; reuse is a secondary benefit.
 - Classes group closely related behaviors and data together into an object
@@ -52,6 +57,19 @@ Follow along in the book for more context!
 - Separation of concerns works closely with encapsulation, abstraction, and loose coupling.
 - Applying effective separation of concerns allows you to add, change, and delete functionality without affecting the surrounding code.
 
+### Ch 7. Extensibility and flexibility
+- Code is said to be *extensible* if adding new behaviors to it has little or no impact on existing behaviors.
+- The mapping of choices to messages acts like configuration—information a program uses to determine how to execute. Configuration is often easier to understand than conditional logic.
+- Deep nesting is a strong hint that concerns need further separation.
+- if/elif/else are difficult to reason about
+- *Inversion of control* says that instead of creating instances of dependencies in your class, you can pass in existing instances for the class to make use of. The control of dependency creation is inverted by giving the control to whatever code is creating.
+- Making testing easier is one of the big reasons to follow the principles you’ve learned in this book. If your code is hard to test, it may be hard to understand as well. If it’s easy to test, it may be easy to understand. Neither is certain, but they’re correlated.
+- This practice of sharing agreed-upon interfaces (in contrast with class-specific details) between high- and low-level code will give you the freedom to swap implementations in and out.
+- *Entropy* is the tendency for organization to dissolve into disorganization over time. Code often starts out small, neat, and understandable, but it tends toward complexity over time.
+- Build code so that adding new features means adding new functions, methods, or classes without editing existing ones.
+- Inversion of control allows other code to customize behavior to its needs without changing the low-level implementation.
+- Sharing agreed-upon interfaces between classes instead of giving them detailed knowledge about each other reduces coupling.
+- Be deliberate about what input types you want to handle, and be strict about your output types.
 
 ## Errata and questions
 

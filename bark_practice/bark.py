@@ -58,6 +58,12 @@ def get_bookmark_id_for_deletion():
     return get_user_input('Enter a bookmark ID to delete')
 
 
+def get_import_github_data():
+    return {
+        'github_username': get_user_input('GitHub username'),
+        'preserve_timestamps': get_user_input('Preserve timestamps [Y/n]') in ('Y', 'y', None)
+    }
+
 def clear_screen():
     clear = 'cls' if os.name == 'nt' else 'clear'
     os.system(clear)
@@ -75,6 +81,9 @@ def main():
         'D': Option('Delete a bookmark',
                     commands.DeleteBookmarkCommand(),
                     get_bookmark_id_for_deletion),
+        'G': Option('Import GitHub stars', 
+                    commands.ImportGitHubStarsCommand(), 
+                    get_import_github_data),
         'Q': Option('Quit', commands.QuitCommand())
     }
     
