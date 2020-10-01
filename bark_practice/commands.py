@@ -1,4 +1,5 @@
 import sys
+from abc import ABC, abstractmethod
 import requests
 
 from datetime import datetime
@@ -6,9 +7,14 @@ from database import DatabaseManager
 
 db = DatabaseManager('bookmarks.db')
 
+class Command(ABC):
+    @abstractmethod
+    def execute(self, data):
+        raise NotImplementedError('Commands must implement an execute method')
+
 # Command Pattern - All classes use common methods: execute()
-class CreateBookmarksTableCommand:
-    def execute(self):
+class CreateBookmarksTableCommand(Command):
+    def execute(self, data=None):
         db.create_table('bookmarks', {
             'id': 'integer primary key autoincrement',
             'title': 'text not null',
@@ -18,7 +24,7 @@ class CreateBookmarksTableCommand:
         })
 
 
-class AddBookmarkCommand:
+class AddBookmarkCommand(Command):
     def execute(self, data, timestamp=None):
         data['date_added'] = timestamp or datetime.utcnow().isoformat()
         db.add('bookmarks', data)
@@ -29,18 +35,18 @@ class ListBookmarksCommand:
     def __init__(self, order_by='date_added'):
         self.order_by = order_by
 
-    def execute(self):
+    def execute(self, data=None):
         return db.select('bookmarks', order_by=self.order_by).fetchall()
 
 
 class DeleteBookmarkCommand:
-    def execute(self, bookmark_id):
-        db.delete('bookmarks', {'id': bookmark_id})
+    def execute(self, data):
+        db.delete('bookmarks', {'id': data})
         return 'Bookmark deleted!'
 
 
 class QuitCommand:
-    def execute(self):
+    def execute(self, data=None):
         sys.exit()
 
 

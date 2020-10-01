@@ -71,6 +71,23 @@ Follow along in the book for more context!
 - Sharing agreed-upon interfaces between classes instead of giving them detailed knowledge about each other reduces coupling.
 - Be deliberate about what input types you want to handle, and be strict about your output types.
 
+### Ch 8. The rules (and exceptions) of inheritance
+- _Parent_ classes are referred to as superclasses in Python (and in many other languages). Child classes are referred to as subclasses.
+- A class inherits all of its superclass’s information and behavior, and it can then override them to do something different. This is probably the tightest coupling that exists in programming. A class is fully coupled to its superclass because everything it knows and does by default is tied to that superclass.
+- Inheritance is for specialization of behavior.
+- Ideal use case for inheritance
+    1. Shallow, narrow hierarchy: makes it easer to reason about. Narrow means there shouldn't be too many subclasses.
+    2. Subclasses are at the leaves of the object graph; they don't make use of other objects. If a subclass has a unique dependency that the superclass or any other subclasses don’t have, composition might be a better way to accomplish that portion of the task.
+    3. Subclasses use (or specialize) all the behavior of their superclass
+- The latest versions of Python support type hinting, which is a way to tell developers and automated tooling what types of objects a function or method expects
+- Python also supports the idea of multiple inheritance, where a subclass may have two or more direct superclasses
+- You can see the method resolution order for any class by using its __mro__ attribute:
+- Abstract base classes in Python are a way of using something that looks like inheritance to achieve something that’s effectively an interface. An abstract base class, like a formal interface in other languages, outlines which methods and attributes its subclasses must implement. Python provides the abc module for easing the creation of abstract base classes
+- Use inheritance to represent true is-a relationships (good for specialization of behavior).
+- Use composition for has-a relationships (good for reuse of code).
+- Method resolution order is key to keeping multiple inheritance straight.
+- Abstract base classes provide interface-like control and safety in Python.
+
 ## Errata and questions
 
 If you find an error in the code or the book, or if you have a question about the content, please read the [contribution guidelines](.github/CONTRIBUTING.md) to understand the best course of action.
