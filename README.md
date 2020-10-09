@@ -88,6 +88,26 @@ Follow along in the book for more context!
 - Method resolution order is key to keeping multiple inheritance straight.
 - Abstract base classes provide interface-like control and safety in Python.
 
+### Ch 9. Keeping things lightweight
+- Measuring *cyclomatic complexity* involves determining the number of execution paths through a function or method
+- Most sources recommend shooting for a complexity of 10 or lower for a given function or method. This corresponds roughly to how much developers can reasonably understand at once.
+- Untested branches of execution are usually what people are referring to when they talk about “edge cases,” a term with negative connotations that usually means “a thing we didn’t think of.
+- *Halstead complexity* attempts to measure quantitatively the ideas of level of abstraction, maintainability, and defect rate. Measuring Halstead complexity involves inspecting a program’s use of the programming language’s built-in operators and how many variables and expressions it contains
+- Radon (https://radon.readthedocs.io) can measure the Halstead complexity of your Python programs if you’re interested in exploring.
+- Extracting configuration into a map also makes code much more readable, in my experience. Trying to sift through a number of if/elif conditions is tiresome, even when they’re all fairly similar. In contrast, a dictionary’s keys are generally scannable.
+- Complexity example: each of these functions has a cyclomatic complexity of 1, is quite readable, and has a nice separation of concerns
+- When you find that a class starts growing in complexity, it’s usually due to a mixing of concerns. Once you identify a concern that feels like its own object, you’ve got enough to start breaking it down.
+- Getters and setters are generally discouraged in Python because they can clutter up a class.
+- The @property decorator can be used to signify that a method on a class should be accessible as an attribute. Methods can be used as properties only if self is their only argument, because when you access the attribute, you can’t pass any arguments to it.
+- Backward compatibility is the practice of evolving your software without breaking the implementation consumers previously relied on.
+- You can continue accepting calls in one class and pass them along to another class under the hood. This is known as forwarding.
+- When several methods in a class share a common prefix or suffix, especially one that doesn’t match the name of the class, there might be a new class waiting to be extracted
+- Code complexity and separate concerns are better metrics than physical size for breaking up code.
+- Cyclomatic complexity measures the number of execution paths through your code.
+- Extract configuration, functions, methods, and classes freely to break down complexity.
+- Use forwarding and deprecation warnings to temporarily support the new and old ways of doing things.
+
+
 ## Errata and questions
 
 If you find an error in the code or the book, or if you have a question about the content, please read the [contribution guidelines](.github/CONTRIBUTING.md) to understand the best course of action.
