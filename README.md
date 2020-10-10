@@ -107,6 +107,22 @@ Follow along in the book for more context!
 - Extract configuration, functions, methods, and classes freely to break down complexity.
 - Use forwarding and deprecation warnings to temporarily support the new and old ways of doing things.
 
+### Ch 10. Achieving loose coupling
+- Loose coupling is what allows you to make changes in different areas of your code without worrying that you’ll break something elsewhere
+- Coupling between two pieces of code (modules, classes, and so on) is considered tight when those pieces of code are interconnected. Anytime a class, method, or function needs to carry a lot of knowledge about another module or class, that’s tight coupling
+- In general, tight coupling is problematic when it exists between two separate concerns. Some tight coupling is a sign of high cohesion that isn’t structured well.
+- You can effectively identify coupling by assessing the likelihood that any given change to a module will require a change to the code that uses it.
+- Loose coupling is the ability of two pieces of code to interact to accomplish a task without either relying heavily on the details of the other. This is often achieved through the use of shared abstractions.
+- Loosely coupled code implements and uses interfaces; at the extreme end, it uses only interfaces for intercommunication.
+-  When code performs several tasks using mainly features from another area, that code is said to have *feature envy*.
+- Feature envy can be solved the same way you fixed your query-cleaning logic: roll it up into a single entry point back at the source.
+- A *leaky abstraction* is one that doesn’t sufficiently hide its details. The abstraction claims to provide a simple way to get something done, but it ultimately requires you to have some knowledge about what lies beneath when using it.
+- Leaks happen because there’s a trade-off to consider with abstractions—generally speaking, the further you abstract a concept in code, the less customization you can provide
+- When you find yourself providing access to a low-level detail from a high-level layer of abstraction, you’re likely introducing coupling.
+- Just as you reduced each of your commands to an execute interface that returns a status and result to decouple them from the presentation layer, you can reduce your persistence layer to a more general set of CRUD operations to decouple it from the commands.
+- Separate concerns, encapsulate data and behaviors, and then create shared abstractions to loosen coupling.
+- Classes that know and use many details of another class may need to be subsumed by that class.
+- Tight coupling can be addressed by re-encapsulation with stronger cohesion, but it can often be well-served by the introduction of a new abstraction shared by both parties. (For example, a menu and a command may rely on the command returning a status and a result instead of specific messaging.)
 
 ## Errata and questions
 
