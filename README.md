@@ -124,6 +124,42 @@ Follow along in the book for more context!
 - Classes that know and use many details of another class may need to be subsumed by that class.
 - Tight coupling can be addressed by re-encapsulation with stronger cohesion, but it can often be well-served by the introduction of a new abstraction shared by both parties. (For example, a menu and a command may rely on the command returning a status and a result instead of specific messaging.)
 
+### Ch 11. Onward and upward
+- A mind map organizes information in a hierarchical structure you can explore visually
+- By using a mind map to enumerate things you want to learn about, you can build up a pretty good picture of different areas you’ll need to cover.
+- A common pitfall is to do a deep dive into one topic without enough context about the rest of the bigger picture, so make sure you maintain a balance. Too much focus in one spot too soon can lead you to solidify an inaccurate or incomplete understanding that can inhibit future learning.
+- There are a few distinct states in learning about a particular topic:
+    1. *Want or need to learn*— It’s on your list of topics to cover, but you haven’t started on it yet.
+    2. *Actively learning*— You’ve explored and read some resources on the topic, and you’re looking for more.
+    3. *Familiar*— You understand the topic generally, and you have some idea how you might apply it.
+    4. *Comfortable*— You’ve applied the concepts from this topic a few times and have a handle on it.
+    5. *Proficient*— You’ve applied the concepts enough to know some of the nuances, and you know which resources to reach for when you     encounter new kinds of problems.
+- A number of design patterns are creational ones. Python’s dynamic typing frees it from many of these limitations, so many creational patterns simply aren’t necessary in Python.
+- **Design patterns Terms**
+    1. Creational design patterns
+    2. Factories
+    3. Behavioral design patterns
+    4. Command pattern
+    5. Structural design patterns
+    6. Adapter pattern
+- **Distributed Systems Terms**
+    1. Distributed systems
+    2. Fault tolerance
+    3. Eventual consistency
+    4. Desired state
+    5. Concurrency
+    6. Message queueing
+- Tools like Black (https://github.com/psf/black) take python style suggestions a step further, imposing a deterministic, opinionated formatting to all your code.
+- **Pythonic Code Terms**
+    1. Pythonic code
+    2. Pythonic way to do X
+    3. Idiomatic Python
+    4. Python anti-patterns
+    5. Python linters
+- Learning is not a passive process. Make a plan that works for you, write it down or map it out, and track your progress. This can generate more ideas or next steps to help keep you motivated and curious.
+- Try to identify common patterns and approaches to problems. As you encounter those same problems, try a few different approaches early on to see which work most smoothly. Patterns are tools, and they should enhance your work rather than hinder it.    
+- Feel at home in your language. You don’t need to pick it up all at once, but keep a curious mindset and ask often if there’s a more idiomatic way to express a thought in code.
+
 ## Errata and questions
 
 If you find an error in the code or the book, or if you have a question about the content, please read the [contribution guidelines](.github/CONTRIBUTING.md) to understand the best course of action.
